@@ -60,6 +60,7 @@ class WeatherViewSet(viewsets.ModelViewSet):
         else:
             return Response({"detail": "Город не найден!"}, status=400)
 
+# Search history
     @action(detail=False, methods=["get"])
     def search_history(self, request, *args, **kwargs):
         serializer = WeatherSerializer(self.queryset, many=True)
